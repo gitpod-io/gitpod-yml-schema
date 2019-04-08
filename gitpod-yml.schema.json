@@ -1,7 +1,7 @@
 {
     "$id": "https://gitpod.io/gitpod-yml.schema.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": ".gitpod.yml configuration file",
+    "title": "`.gitpod.yml` configuration file schema",
     "type": "object",
     "properties": {
         "ports": {
@@ -49,17 +49,17 @@
         },
         "tasks": {
             "type": "array",
-            "description": "List of tasks to run on start. Each task will open a terminal in the IDE.",
+            "description": "List of tasks to run on start. Each task will open a separate terminal in the IDE.",
             "items": {
                 "type": "object",
                 "properties": {
                     "name": {
                         "type": "string",
-                        "description": "Name of the task. Shown on the tab of the opened terminal."
+                        "description": "Name of the task. Shown in the tab handle of the opened terminal."
                     },
                     "before": {
                         "type": "string",
-                        "description": "A shell command to run before `init` and the main `command`. This command is executed on every start and is expected to terminate. If it fails, the following commands will not be executed."
+                        "description": "A shell command to run before `init` and the main `command`. This command is executed on every start and is expected to terminate. If it fails, the subsequent commands will not be executed."
                     },
                     "init": {
                         "type": "string",
@@ -108,18 +108,18 @@
                 "object",
                 "string"
             ],
-            "description": "List of tasks to run on start.",
+            "description": "Docker image to use for workspaces. Default is 'gitpod/workspace-full'.",
             "required": [
                 "file"
             ],
             "properties": {
                 "file": {
                     "type": "string",
-                    "description": "Relative path to a docker file."
+                    "description": "Relative path to a Dockerfile."
                 },
                 "context": {
                     "type": "string",
-                    "description": "Relative path to the context path (optional). Should only be set if you need to copy files into the image."
+                    "description": "Relative path of Docker build context (optional). Should only be set if you need to copy files into the image."
                 }
             },
             "additionalProperties": false
@@ -167,7 +167,7 @@
                         },
                         "addBadge": {
                             "type": "boolean",
-                            "description": "Add a Review in Gitpod badge to pull requests. Defaults to true."
+                            "description": "Add a 'Review in Gitpod' badge to pull requests. Defaults to true."
                         },
                         "addLabel": {
                             "type": ["boolean", "string"],
