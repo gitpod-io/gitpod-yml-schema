@@ -14,8 +14,9 @@
                 ],
                 "properties": {
                     "port": {
-                        "type": "number",
-                        "description": "The port number to expose."
+                        "type": ["number", "string"],
+                        "pattern": "^\\d+[:-]\\d+$",
+                        "description": "The port number (e.g. 1337) or range (e.g. 3000-3999) to expose."
                     },
                     "onOpen": {
                         "type": "string",
