@@ -1,3 +1,5 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/gitpod-io/gitpod-yml-schema) 
+
 # .gitpod.yml schema
 
 Specification of the [`.gitpod.yml`](https://www.gitpod.io/docs/41_Config_Gitpod_File/) configuration file, using [JSON Schema](https://json-schema.org/).
